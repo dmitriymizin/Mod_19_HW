@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <style>
+        a {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <page>
+        {% block pagename %}
+            <p>тут заголовки</p>
+        {% endblock %}
+    </page>
+
+    <menu>
+        {% block menu %}
+            <a href="{% url 'platform_main' %}">Главная</a>
+            <a href="{% url 'games' %}">Магазин</a>
+            <a href="{% url 'cart' %}">Корзина</a>
+        {% endblock %}
+    </menu>
+
+    <content>
+        {% block content %}
+            <p></p>
+        {% endblock %}
+    </content>
+</body>
+</html>

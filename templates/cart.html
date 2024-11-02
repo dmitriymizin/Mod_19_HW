@@ -1,0 +1,17 @@
+{% extends 'menu.html' %}
+
+{% block pagename %}
+    <h1>Корзина</h1>
+{% endblock %}
+
+{% block content %}
+    {% if cart_items %}
+        <ul>
+            {% for item in cart_items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>Извините, ваша корзина пуста.</h2>
+    {% endif %}
+{% endblock %}

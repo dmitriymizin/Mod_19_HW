@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0,
+        maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=adge">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="login">Введите логин</label>
+        <input type="text" id="login" name="login" maxlength="30" required>
+
+        <label for="password">Введите пароль</label>
+        <input type="password" id="password" name="password" minlength="8" required>
+
+        <label for="repeat_password">Повторите пароль</label>
+        <input type="password" id="repeat_password" name="repeat_password" minlength="8" required>
+
+        <label for="age">Введите свой возраст</label>
+        <input type="text" id="age" name="age" maxlength="3" required>
+
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
